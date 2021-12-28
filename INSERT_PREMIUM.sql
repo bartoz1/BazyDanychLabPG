@@ -28,62 +28,62 @@ INSERT INTO Oceny(ocena, tekst, produkt_id) VALUES
 INSERT INTO Produkty (nazwa, kategoria, opis, cena) VALUES 
 	('skakanka 2m', 'sport', 'Skakanka z lozyskiem', 49.99)
 INSERT INTO Oceny(ocena, tekst, produkt_id) VALUES
-	(3, 'Bardzo ciche ≥oøysko!', IDENT_CURRENT('Produkty')),
+	(3, 'Bardzo ciche ≈Ço≈ºysko!', IDENT_CURRENT('Produkty')),
 	(2, null, IDENT_CURRENT('Produkty'));;
 -- 3 prod + 1 ocen
 INSERT INTO Produkty (nazwa, kategoria, opis, cena) VALUES 
-	('hantle 15kg' ,'sport', 'Sztangielka z gwintem, czyli klasyka, a zarazem niezbÍdnik kaødej domowej si≥owni.', 234.75),
-	('filtr kabinowy', 'motoryzacja', 'Filtry kabinowe chroniπ podrÛøujπcych przed zanieczyszczeniami przedostajπcymi siÍ do wnÍtrza samochodu.', 86),
-	('mata do cwiczen', 'sport', 'Mata do ÊwiczeÒ 4FIZJO TPE to najwyøszej jakoúci mata gimnastyczna.', 80.99)
+	('hantle 15kg' ,'sport', 'Sztangielka z gwintem, czyli klasyka, a zarazem niezbƒôdnik ka≈ºdej domowej si≈Çowni.', 234.75),
+	('filtr kabinowy', 'motoryzacja', 'Filtry kabinowe chroniƒÖ podr√≥≈ºujƒÖcych przed zanieczyszczeniami przedostajƒÖcymi siƒô do wnƒôtrza samochodu.', 86),
+	('mata do cwiczen', 'sport', 'Mata do ƒáwicze≈Ñ 4FIZJO TPE to najwy≈ºszej jako≈õci mata gimnastyczna.', 80.99)
 INSERT INTO Oceny(ocena, tekst, produkt_id) VALUES
-	(4, 'Przyjemny materia≥', IDENT_CURRENT('Produkty'));
+	(4, 'Przyjemny materia≈Ç', IDENT_CURRENT('Produkty'));
 -- 1 prod + 1 ocen
 INSERT INTO Produkty (nazwa, kategoria, opis, cena) VALUES 
-	('George Orwell Folwark Zwierzecy', 'ksiazki', 'Folwark zwierzÍcy ñ opowieúÊ o rewolucji, ktÛra posz≥a nie tak.', 15.99)
+	('George Orwell Folwark Zwierzecy', 'ksiazki', 'Folwark zwierzƒôcy ‚Äì opowie≈õƒá o rewolucji, kt√≥ra posz≈Ça nie tak.', 15.99)
 INSERT INTO Oceny(ocena, tekst, produkt_id) VALUES
 	(5, null, IDENT_CURRENT('Produkty'));
 -- 1 prod + 3 ocen
 INSERT INTO Produkty (nazwa, kategoria, opis, cena) VALUES 
-	('Stephen King Instytut', 'ksiazki', 'Ksiπøka ÑInstytutî Stephena Kinga jest znakomitym horrorem, ktÛry zwala z nÛg fabu≥π.', 39.99)
+	('Stephen King Instytut', 'ksiazki', 'KsiƒÖ≈ºka ‚ÄûInstytut‚Äù Stephena Kinga jest znakomitym horrorem, kt√≥ry zwala z n√≥g fabu≈ÇƒÖ.', 39.99)
 INSERT INTO Oceny(ocena, tekst, produkt_id) VALUES
 	(4, null, IDENT_CURRENT('Produkty')),
-	(5, 'Ciekawa ksiπøka', IDENT_CURRENT('Produkty')),
+	(5, 'Ciekawa ksiƒÖ≈ºka', IDENT_CURRENT('Produkty')),
 	(4, null, IDENT_CURRENT('Produkty'));
 -- 2 prod + 1 ocen
 INSERT INTO Produkty (nazwa, kategoria, opis, cena) VALUES 
 	('Monopoly', 'rozrywka', 'Kultowa gra planszowa Monopoly', 89.99),
-	('Wsiasc do Pociagu', 'rozrywka' , 'Rebel, gra planszowa WsiπúÊ do Pociπgu: Europa', 143.99)
+	('Wsiasc do Pociagu', 'rozrywka' , 'Rebel, gra planszowa WsiƒÖ≈õƒá do PociƒÖgu: Europa', 143.99)
 INSERT INTO Oceny(ocena, tekst, produkt_id) VALUES
-	(4, 'Super planszÛwka', IDENT_CURRENT('Produkty'))
+	(4, 'Super plansz√≥wka', IDENT_CURRENT('Produkty'))
 -- 1 prod + 3 ocen
 INSERT INTO Produkty (nazwa, kategoria, opis, cena) VALUES 
-	('Scrabble', 'rozrywka', 'Scrabble to gra, ktÛra pozwoli Ci utrzymaÊ swÛj umys≥ w doskona≥ej kondycji.', 92.99)
+	('Scrabble', 'rozrywka', 'Scrabble to gra, kt√≥ra pozwoli Ci utrzymaƒá sw√≥j umys≈Ç w doskona≈Çej kondycji.', 92.99)
 INSERT INTO Oceny(ocena, tekst, produkt_id) VALUES
 	(3, null, IDENT_CURRENT('Produkty')),
-	(2, 'produkt na zdjeciu wyglπda≥ lepiej :/', IDENT_CURRENT('Produkty')),
+	(2, 'produkt na zdjeciu wyglƒÖda≈Ç lepiej :/', IDENT_CURRENT('Produkty')),
 	(4, null, IDENT_CURRENT('Produkty'));
 -- sprawdzenie przypisania ocen do prod
 -- select * from Produkty, Oceny WHERE Oceny.produkt_id = Produkty.id 
 
--- TWORZENIE KOSZYKOW, PRZYPISYWANIE ICH DO POSZCZEGOLNYCH KLIENTOW, DODANIE ZAMOWIEN KLIENTOW
+-- TWORZENIE KOSZYKOW, PRZYPISYWANIE ICH DO POSZCZEGOLNYCH KLIENTOW, DODANIE ZAMOWIEN KLIENTOW I REKLAMACJI
 -- klient 1
 INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES 
 		   ('Bartosz', 'Lis', '504239152', IDENT_CURRENT('Koszyk'))
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('ul. Koúciuszki Tadeusza 72', null, '50-037', 'Wroc≥aw', 'Polska', null)
+ VALUES ('ul. Ko≈õciuszki Tadeusza 72', null, '50-037', 'Wroc≈Çaw', 'Polska', null)
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('odebrane', 1, '2021-01-24', IDENT_CURRENT('Adresy'),IDENT_CURRENT('Klienci'), NULL),
 			('odebrane', 1, '2021-03-24', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), 'OFF15NOW'),
 			('wyslane', 1, '2021-12-07', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), 'P0L3K4')
 INSERT INTO Reklamacje (opis, status, czy_zwrocono, zamowienie_id) 
-	VALUES ('Na produkcie sπ widoczne úlady uøytkowania', 'przyjeta', 1, IDENT_CURRENT('Zamowienia'))
+	VALUES ('Na produkcie sƒÖ widoczne ≈õlady u≈ºytkowania', 'przyjeta', 1, IDENT_CURRENT('Zamowienia'))
 -- klient 2
 INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Jan', 'Kustosz', '681239173', IDENT_CURRENT('Koszyk'))
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('ul. Lampego Alfreda 84', 'lokal 4c', '41-608', 'åwiÍtoch≥owice', 'Polska', null)
+ VALUES ('ul. Lampego Alfreda 84', 'lokal 4c', '41-608', '≈öwiƒôtoch≈Çowice', 'Polska', null)
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('odebrane', 1, '2021-02-04', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
 INSERT INTO Reklamacje (opis, status, czy_zwrocono, zamowienie_id) 
@@ -94,7 +94,7 @@ INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Mikolaj', 'Starzak', '504296384',IDENT_CURRENT('Koszyk') )
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
-VALUES ('ul. KotarbiÒskiego Tadeusza 104', null, '61-415', 'PoznaÒ', 'Polska', 'odbior jedynie w godzinach wieczornych')
+VALUES ('ul. Kotarbi≈Ñskiego Tadeusza 104', null, '61-415', 'Pozna≈Ñ', 'Polska', 'odbior jedynie w godzinach wieczornych')
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('przyjete', 0, '2021-01-24', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL),
 			('odebrane', 0, '2021-12-15', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
@@ -105,7 +105,7 @@ INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Szymon', 'Majewski', '604997198', IDENT_CURRENT('Koszyk'))
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
-VALUES ('Czereúniowa 15/303', null, '05-077', 'Warszawa', 'Polska', null)
+VALUES ('Czere≈õniowa 15/303', null, '05-077', 'Warszawa', 'Polska', null)
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('odebrane', 1, '2021-07-27', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
 INSERT INTO Reklamacje (opis, status, czy_zwrocono, zamowienie_id) 
@@ -119,7 +119,7 @@ INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Piotr', 'Dolkowski', '657982154', IDENT_CURRENT('Koszyk') )
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('Cegielskiego Hipolita 119', null, '52-130', 'Wroc≥aw', 'Polska', null)
+ VALUES ('Cegielskiego Hipolita 119', null, '52-130', 'Wroc≈Çaw', 'Polska', null)
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('odebrane', 1, '2021-08-07', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
 INSERT INTO Reklamacje (opis, status, czy_zwrocono, zamowienie_id) 
@@ -129,7 +129,7 @@ INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Jakub', 'Jablkowski', '504128785',IDENT_CURRENT('Koszyk') )
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('G≥ogowska 3', null, '45-315', 'Opole', 'Polska', null)
+ VALUES ('G≈Çogowska 3', null, '45-315', 'Opole', 'Polska', null)
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('odebrane', 0, '2021-08-24', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
 INSERT INTO Reklamacje (opis, status, czy_zwrocono, zamowienie_id) 
@@ -139,17 +139,17 @@ INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Michal', 'Lipek', '504298654', IDENT_CURRENT('Koszyk'))
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('Berberysowa 12', null, '15-591', 'Bia≥ystok', 'Polska', 'odbior mozliwy po godzinie 16')
+ VALUES ('Berberysowa 12', null, '15-591', 'Bia≈Çystok', 'Polska', 'odbior mozliwy po godzinie 16')
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('odebrane', 1, '2021-08-25', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
 INSERT INTO Reklamacje (opis, status, czy_zwrocono, zamowienie_id) 
-	VALUES ('JakoúÊ produktu jest niezadawalajπca', 'odrzucona', 0, IDENT_CURRENT('Zamowienia'))
+	VALUES ('Jako≈õƒá produktu jest niezadawalajƒÖca', 'odrzucona', 0, IDENT_CURRENT('Zamowienia'))
 -- klient 8
 INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Krzysztof', 'Bulwinski', 687425691, IDENT_CURRENT('Koszyk'))
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('ul. Wyúcigowa 141/101', null, '20-425', 'Lublin', 'Polska', null)
+ VALUES ('ul. Wy≈õcigowa 141/101', null, '20-425', 'Lublin', 'Polska', null)
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('odebrane', 1, '2021-08-25', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
 INSERT INTO Reklamacje (opis, status, czy_zwrocono, zamowienie_id) 
@@ -159,7 +159,7 @@ INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Marcin', 'Kaczek', '504215698', IDENT_CURRENT('Koszyk') )
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('ul. Witosa Wincentego 71/203', null, '51-507', 'Wroc≥aw', 'Polska', 'odbior w godzinach wieczornych lub porannych')
+ VALUES ('ul. Witosa Wincentego 71/203', null, '51-507', 'Wroc≈Çaw', 'Polska', 'odbior w godzinach wieczornych lub porannych')
 INSERT INTO Zamowienia (status, czy_oplacone, data_zlozenia, adres_id, klient_id, kod_promocji)
 	VALUES ('wyslane', 1, '2021-11-26', IDENT_CURRENT('Adresy'), IDENT_CURRENT('Klienci'), NULL)
 
@@ -168,14 +168,14 @@ INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Marek', 'Caitlyn', '783569254', IDENT_CURRENT('Koszyk') )
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('ul. Chopina 47', null, '55-203', 'O≥awa', 'Polska', null)
+ VALUES ('ul. Chopina 47', null, '55-203', 'O≈Çawa', 'Polska', null)
 
 -- klient 11
 INSERT INTO Koszyk(data_modyfikacji) VALUES (null)
 INSERT INTO Klienci (imie, nazwisko, telefon, koszyk_id) VALUES
 		   ('Damian', 'Golasek', '504215485', IDENT_CURRENT('Koszyk'))
 INSERT INTO Adresy (adres_cz1, adres_cz2, kod_pocztowy, miejscowosc, kraj, dodatkowe_informacje) 
- VALUES ('ul. Øytnia 72', null, '91-003', '£Ûdü', 'Polska', null)
+ VALUES ('ul. ≈ªytnia 72', null, '91-003', '≈Å√≥d≈∫', 'Polska', null)
 
 -- DODANIE LOSOWYCH PRODUKTOW DO LOSOWYCH ZAMOWIEN KLIENTOW
 INSERT INTO Produkt_zamowienie (produkt_id, zamowienie_id, ilosc)
@@ -222,8 +222,8 @@ select * from Klienci, Produkty, Produkt_zamowienie, Zamowienia WHERE Produkt_za
 --		and Produkt_zamowienie.zamowienie_id = Zamowienia.id and Reklamacje.zamowienie_id = Zamowienia.id
 --SELECT * from Zamowienia, Adresy WHERE Zamowienia.adres_id = Adresy.ID
 
--- WYåWIETLENIE ZAMOWIEN, KTORE MAJA REKLAMACJE
-select Zamowienia.ID, Zamowienia.status, kod_promocji, nazwa as 'Nazwa prod', Reklamacje.opis as 'przyczyna zwotu', kategoria, cena, Reklamacje.status as 'status rek', czy_zwrocono, ilosc from Zamowienia, Produkty, Reklamacje, Produkt_zamowienie 
-	WHERE Reklamacje.zamowienie_id = Zamowienia.ID and Produkt_zamowienie.zamowienie_id = Zamowienia.ID 
-	and Produkt_zamowienie.produkt_id = Produkty.ID
-	ORDER BY Zamowienia.id
+-- WY≈öWIETLENIE ZAMOWIEN, KTORE MAJA REKLAMACJE
+--select Zamowienia.ID, Zamowienia.status, kod_promocji, nazwa as 'Nazwa prod', Reklamacje.opis as 'przyczyna zwotu', kategoria, cena, Reklamacje.status as 'status rek', czy_zwrocono, ilosc from Zamowienia, Produkty, Reklamacje, Produkt_zamowienie 
+--	WHERE Reklamacje.zamowienie_id = Zamowienia.ID and Produkt_zamowienie.zamowienie_id = Zamowienia.ID 
+--	and Produkt_zamowienie.produkt_id = Produkty.ID
+--	ORDER BY Zamowienia.id
