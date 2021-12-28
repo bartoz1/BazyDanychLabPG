@@ -41,12 +41,11 @@ CREATE TABLE Zamowienia (
 
 CREATE TABLE Adresy (
 	ID int IDENTITY(1,1) PRIMARY KEY,
-	adres_cz1 varchar(40) not null CHECK(adres_cz1 NOT LIKE '%[^A-Z/.•Øè ∆—”£ 0-9]%'),
-	adres_cz2 varchar(40) CHECK(adres_cz2 NOT LIKE '%[^A-Z/.•Øè ∆—”£ 0-9]%'),
+	adres_cz1 varchar(40) not null CHECK(adres_cz1 NOT LIKE '%[^A-Z/.ƒÑ≈ª≈πƒòƒÜ≈É√ì≈Å 0-9]%'),
+	adres_cz2 varchar(40) CHECK(adres_cz2 NOT LIKE '%[^A-Z/.ƒÑ≈ª≈πƒòƒÜ≈É√ì≈Å 0-9]%'),
 	kod_pocztowy char(6) not null CHECK (kod_pocztowy LIKE '[0-9][0-9]-[0-9][0-9][0-9]'),
-	miejscowosc varchar(30) CHECK(miejscowosc NOT LIKE '%[^A-Z/.•Øè ∆—”£ 0-9]%'),
-	kraj varchar(58) CHECK(kraj NOT LIKE '%[^A-Z•Øè ∆—”£ 0-9]%'),
-	nazwa_planety varchar(100) CHECK(nazwa_planety NOT LIKE '%[^A-Z0-9 -/]%'),
+	miejscowosc varchar(30) CHECK(miejscowosc NOT LIKE '%[^A-Z/.ƒÑ≈ª≈πƒòƒÜ≈É√ì≈Å 0-9]%'),
+	kraj varchar(58) CHECK(kraj NOT LIKE '%[^A-ZƒÑ≈ª≈πƒòƒÜ≈É√ì≈Å 0-9]%'),
 	dodatkowe_informacje varchar(100)
 )
 
@@ -86,7 +85,7 @@ CREATE TABLE Oceny (
 	produkt_id int,
 	
 )
-
+-- ZWIƒÑZKI + KASKAWOWA AKTUALIZACJA + KASKADOWE USUWANIE
 ALTER TABLE Produkt_zamowienie ADD CONSTRAINT nalezy_do_zamowienia FOREIGN KEY (produkt_id) REFERENCES Produkty(ID)
 ALTER TABLE Produkt_zamowienie ADD CONSTRAINT zawiera FOREIGN KEY (zamowienie_id) REFERENCES Zamowienia(ID) ON DELETE CASCADE
 ALTER TABLE Zamowienia ADD CONSTRAINT zamawia FOREIGN KEY (klient_id) REFERENCES Klienci(ID) ON DELETE SET NULL
